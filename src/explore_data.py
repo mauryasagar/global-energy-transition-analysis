@@ -11,5 +11,8 @@ df = pd.merge(df_energy, df_co2, on=["country", "year"])
 cols = ["country", "year", "renewables_share_energy", "co2_per_capita"]
 df = df[cols]
 
+# Drop rows with missing values
+df = df.dropna()
+
 # Print the first 5 rows
 print(df.head())
