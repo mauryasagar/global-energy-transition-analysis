@@ -17,5 +17,9 @@ df = df.dropna(subset=["iso_code"])
 # Drop rows with missing values
 df = df.dropna()
 
+# Filter for specific countries
+target_countries = ["India", "United States", "China", "Germany"]
+df = df[df["country"].isin(target_countries)]
+
 # Print the first 5 rows
 print(df.head())
